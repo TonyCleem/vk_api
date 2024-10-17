@@ -44,9 +44,10 @@ if __name__ == '__main__':
     load_dotenv()
     token = os.environ['VK_TOKEN']
     parser = argparse.ArgumentParser(
-        description='Укажите URL-адрес в качестве ключа'
+        description='''Укажите URL-адрес в качестве ключа. 
+        При вводе сокращенного URL отобразиться количество переходов по этой ссылке'''
     )
-    parser.add_argument('url', help='Ваш URL-адрес')
+    parser.add_argument('<url>', help='Ваш URL-адрес')
     args = parser.parse_args()
     user_input = args.url
     if is_shorten_link(user_input):
